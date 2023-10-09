@@ -27,11 +27,7 @@ app.use("/user", require("./src/route/userRoute"));
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  )
+  res.sendFile(path.join(__dirname, "./client/build/index.html"))
 });
 
 // application running on server
